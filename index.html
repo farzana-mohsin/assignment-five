@@ -5,9 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>P Ticket</title>
     <link rel="stylesheet" href="styles/assignment-five.css" />
+    <!-- Daisy UI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <h1>Hello</h1>
+  <body class="font-raleway">
+    <header>
+      <!-- background section -->
+      <section
+        class="container mx-auto bg-[url(images/banner.png)] flex min-h-screen items-center justify-center bg-no-repeat bg-center object-cover"
+      >
+        <div class="flex flex-col items-center gap-6 pb-12 pt-0">
+          <h1 class="text-6xl text-white font-extrabold">
+            End to End Travel with
+          </h1>
+          <h1 class="text-6xl text-green-500 font-extrabold">P Paribahan</h1>
+          <p class="text-white">
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .
+          </p>
+          <button
+            onclick="play(event)"
+            class="btn bg-green-500 text-black border-none font-bold"
+          >
+            Buy Tickets
+          </button>
+        </div>
+      </section>
+    </header>
+    <main>
+      <!-- Best offers section -->
+      <section
+        class="container mx-auto flex flex-col gap-11 items-center justify-center mb-10 mt-5"
+      >
+        <h2 class="text-4xl font-semibold">Best offers for you</h2>
+        <div
+          class="flex flex-col lg:flex-row items-center justify-center space-x-8"
+        >
+          <img class="max-w-[37%]" src="images/image (3).png" alt="" />
+          <img class="max-w-[37%]" src="images/image (4).png" alt="" />
+        </div>
+        <button
+          class="bg-white text-green-600 border-2 border-green-500 p-4 font-semibold rounded-xl"
+        >
+          See All Offers
+        </button>
+      </section>
+      <!-- Ticketing section -->
+      <section class="bg-gray-100 min-h-screen rounded-t-3xl">
+        <h3 class="text-center font-semibold text-4xl my-10 pt-28">
+          P Paribahan
+        </h3>
+        <p class="text-center mx-auto">
+          Yes, you can run unit tests and view the results directly within the
+          app. The integrated <br />testing features allow for a streamlined .
+        </p>
+        <div class="container mx-auto my-10 bg-white min-h-screen rounded-2xl">
+          <div
+            class="flex flex-col items-center justify-center min-h-screen bg-center bg-cover"
+          ></div>
+
+          <button
+            class="bg-white text-green-600 border-2 border-green-500 p-4 font-semibold rounded-xl absolute hidden"
+          >
+            40 Seats Left
+          </button>
+        </div>
+      </section>
+    </main>
+
     <script src="js/assignment-five.js"></script>
   </body>
 </html>
