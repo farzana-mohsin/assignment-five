@@ -80,59 +80,142 @@
           </div>
         </div>
       </section>
-      <section>
-        <!-- ticketing section -->
-        <p>Select Your Seat</p>
-        <p class="flex items-center">
-          <img src="images/seat-gray.png" alt="" />Available
-        </p>
+      <section class="flex justify-around items-start font-inter">
+        <!-- ticketing section left side -->
+        <div>
+          <p>Select Your Seat</p>
+          <p class="flex items-center">
+            <img src="images/seat-gray.png" alt="" />Available
+          </p>
 
-        <span class="bg-gray-100 text-right">Gear icon</span>
-        <div class="flex container mx-auto font-inter gap-28 my-20">
-          <div class="grid grid-cols-3 gap-10">
-            <p class="text-center py-4 px-10 border-none">A</p>
-            <p class="bg-gray-100 py-4 px-4 border-none rounded-lg text-center">
-              A1
-            </p>
-            <p
-              class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
-            >
-              B1
-            </p>
-            <p class="text-center py-4 px-4 border-none">B</p>
-            <p
-              class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
-            >
-              B2
-            </p>
-            <p
-              class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
-            >
-              A2
-            </p>
+          <span class="bg-gray-100 text-right">Gear icon</span>
+          <div class="flex container mx-auto gap-28 my-20">
+            <div class="grid grid-cols-3 gap-10">
+              <p class="text-center py-4 px-10 border-none">A</p>
+              <p
+                class="bg-gray-100 py-4 px-4 border-none rounded-lg text-center"
+              >
+                A1
+              </p>
+              <p
+                class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
+              >
+                B1
+              </p>
+              <p class="text-center py-4 px-4 border-none">B</p>
+              <p
+                class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
+              >
+                B2
+              </p>
+              <p
+                class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
+              >
+                A2
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-10">
+              <p
+                class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
+              >
+                A3
+              </p>
+              <p
+                class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
+              >
+                A4
+              </p>
+              <p
+                class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
+              >
+                B3
+              </p>
+              <p
+                class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
+              >
+                B4
+              </p>
+            </div>
           </div>
-          <div class="grid grid-cols-2 gap-10">
-            <p
-              class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
-            >
-              A3
-            </p>
-            <p
-              class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
-            >
-              A4
-            </p>
-            <p
-              class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
-            >
-              B3
-            </p>
-            <p
-              class="bg-gray-100 py-4 px-10 border-none rounded-lg text-center"
-            >
-              B4
-            </p>
+        </div>
+        <!-- ticketing section right side -->
+        <div>
+          <p>Select Your Seat</p>
+          <hr class="m-6 border-dotted" />
+          <div class="bg-gray-100 p-8">
+            <div class="overflow-x-auto">
+              <table class="table">
+                <!-- head -->
+                <thead>
+                  <tr>
+                    <th>Seat</th>
+                    <th>Class</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- row 1 -->
+                  <!-- <tr>
+                    <td>Cy Ganderton</td>
+                    <td>Quality Control Specialist</td>
+                    <td>Blue</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="m-6" />
+            <div class="flex justify-between my-6">
+              <p>Total Price</p>
+              <p>BDT 0</p>
+            </div>
+            <div class="flex justify-center">
+              <input
+                class="rounded-xl"
+                type="text"
+                placeholder="Have any coupon?"
+              />
+              <button
+                class="bg-green-500 text-white p-4 border-none rounded-xl"
+              >
+                Apply
+              </button>
+            </div>
+            <div class="flex justify-between my-6">
+              <p>Grand Total</p>
+              <p>BDT 0</p>
+            </div>
           </div>
+
+          <form method="get" class="form-example">
+            <label for="name">Passenger name:</label><br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Enter your name"
+            /><br />
+            <label for="phone">Phone Number</label><br />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="Enter your phone number"
+            />
+            <br />
+            <label for="email">Email ID</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email id"
+            /><br />
+            <div class="form-example">
+              <input type="submit" value="Next" />
+            </div>
+          </form>
         </div>
       </section>
     </main>
