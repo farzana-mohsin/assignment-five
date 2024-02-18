@@ -34,3 +34,25 @@ function incrementSeatsSelectedCount(event) {
   const newSeatCount = seatCount + 1;
   setInnerTextById("seat-added", newSeatCount);
 }
+
+// set seat, class, and price details on seat click
+seat.addEventListener("click", displaySeatDetails);
+
+function displaySeatDetails(event) {
+  const tRow = document.createElement("tr");
+
+  const td1 = document.createElement("td");
+  td1.innerText = event.target.innerText;
+  tRow.appendChild(td1);
+
+  const td2 = document.createElement("td");
+  td2.innerText = "Economy";
+  tRow.appendChild(td2);
+
+  const td3 = document.createElement("td");
+  td3.innerText = 550;
+  tRow.appendChild(td3);
+
+  const bodyParent = document.getElementById("body-parent");
+  bodyParent.appendChild(tRow);
+}
