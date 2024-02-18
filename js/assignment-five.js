@@ -18,3 +18,10 @@ function changeSeatsLeftCount(event) {
   const newSeatsLeft = seatsLeft - 1;
   setInnerTextById("seats-left", newSeatsLeft);
 }
+
+// set background color of the selected seat
+seat.addEventListener("click", changeSelectedSeatColor);
+
+function changeSelectedSeatColor(event) {
+  setBackgroundColorByElement(event.target, "bg-green-400");
+}
