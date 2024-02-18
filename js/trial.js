@@ -1,59 +1,79 @@
-let totalPrice = 0;
-let grandTotalPrice = 0;
-const seats = document.getElementsByClassName("seat-selection");
-for (let index = 0; index < seats.length; index++) {
-  const seat = seats[index];
-  seat.addEventListener("click", function (event) {
-    const seatsLeft = getParsedInnerTextById("seats-left");
-    const newSeatsLeft = seatsLeft - 1;
-    setInnerTextById("seats-left", newSeatsLeft);
+let seatsSelectedCount = 0;
+const seatsSelectedList = [];
 
-    // set background color of the selected seat
-    setBackgroundColorByElement(event.target, "bg-green-400");
+// scroll to ticketing section
+const buyTickets = document.getElementById("buy-tickets");
+buyTickets.addEventListener("click", scrollToTicket);
 
-    // increase number of seats selected on seat click
-    const seatCount = getParsedInnerTextById("seat-added");
-    const newSeatCount = seatCount + 1;
-    setInnerTextById("seat-added", newSeatCount);
-
-    // set seat, class, and price details on seat click
-    const tRow = document.createElement("tr");
-
-    const td1 = document.createElement("td");
-    td1.innerText = event.target.innerText;
-    tRow.appendChild(td1);
-
-    const td2 = document.createElement("td");
-    td2.innerText = "Economy";
-    tRow.appendChild(td2);
-
-    const td3 = document.createElement("td");
-    td3.innerText = 550;
-    tRow.appendChild(td3);
-    // console.log(typeof perSeatPrice);
-
-    const bodyParent = document.getElementById("body-parent");
-    bodyParent.appendChild(tRow);
-
-    // put correct value to Total Price field
-    // const price = getParsedInnerTextById("per-seat-price");
-    // console.log(typeof price);
-    const perSeatPrice = parseInt(td3.innerText);
-    let totalPrice = getParsedInnerTextById("total-price");
-    const newTotalPrice = (totalPrice += perSeatPrice);
-    console.log(newTotalPrice);
-    setInnerTextById("total-price", newTotalPrice);
-    const grandTotalPrice = getParsedInnerTextById("grand-total");
-    setInnerTextById("grand-total", newTotalPrice);
-    // console.log(typeof totalPrice);
-    // setInnerTextById("total-price", )
-
-    // put correct value to Grand Total Price field
+function scrollToTicket(event) {
+  const ticketingSection = document.getElementById("ticketing-section");
+  ticketingSection.scrollIntoView({
+    behavior: "smooth",
   });
 }
 
-// apply discount
+const seats = document.getElementsByClassName("seat-selection");
+for (let index = 0; index < seats.length; index++) {
+  const seat = seats[index];
 
+  seat.addEventListener("click", function (event) {
+    if (!seatsSelectedList.includes(event.target.innerText)) {
+      if (seatsSelectedCount >= 4) {
+        alert("you cannot select more than four seats");
+      } else {
+        seatsSelectedCount++;
+        seatsSelectedList.push(event.target.innerText);
+
+        const seatsLeft = getParsedInnerTextById("seats-left");
+        const newSeatsLeft = seatsLeft - 1;
+        setInnerTextById("seats-left", newSeatsLeft);
+
+        // set background color of the selected seat
+        setBackgroundColorByElement(event.target, "bg-green-400");
+
+        // increase number of seats selected on seat click
+        const seatCount = getParsedInnerTextById("seat-added");
+        const newSeatCount = seatCount + 1;
+        setInnerTextById("seat-added", newSeatCount);
+
+        // set seat, class, and price details on seat click
+        const tRow = document.createElement("tr");
+
+        const td1 = document.createElement("td");
+        td1.innerText = event.target.innerText;
+        tRow.appendChild(td1);
+
+        const td2 = document.createElement("td");
+        td2.innerText = "Economy";
+        tRow.appendChild(td2);
+
+        const td3 = document.createElement("td");
+        td3.innerText = 550;
+        tRow.appendChild(td3);
+        // console.log(typeof perSeatPrice);
+
+        const bodyParent = document.getElementById("body-parent");
+        bodyParent.appendChild(tRow);
+
+        // put correct value to Total Price field
+        // const price = getParsedInnerTextById("per-seat-price");
+        // console.log(typeof price);
+        const perSeatPrice = parseInt(td3.innerText);
+        let totalPrice = getParsedInnerTextById("total-price");
+        const newTotalPrice = (totalPrice += perSeatPrice);
+        console.log(newTotalPrice);
+        setInnerTextById("total-price", newTotalPrice);
+
+        // put correct value to Grand Total Price field
+        const grandTotalPrice = getParsedInnerTextById("grand-total");
+        setInnerTextById("grand-total", newTotalPrice);
+      }
+      console.log(seatsSelectedList);
+    }
+  });
+}
+
+// apply discount and hide discount section
 const applyButton = document.getElementById("apply-button");
 applyButton.addEventListener("click", function () {
   const couponCode = document.getElementById("apply-coupon").value;
