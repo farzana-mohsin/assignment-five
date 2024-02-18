@@ -56,3 +56,11 @@ function displaySeatDetails(event) {
   const bodyParent = document.getElementById("body-parent");
   bodyParent.appendChild(tRow);
 }
+
+// put correct value to Total Price field
+seat.addEventListener("click", displayTotalPrice);
+function displayTotalPrice(event) {
+  const totalPrice = getParsedInnerTextById("total-price");
+  const newTotalPrice = totalPrice + 550;
+  setInnerTextById("total-price", 550);
+}
