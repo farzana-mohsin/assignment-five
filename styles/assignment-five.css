@@ -5,3 +5,7 @@
 .font-inter {
   font-family: "Inter", sans-serif;
 }
+
+#A1 {
+  cursor: pointer;
+}
