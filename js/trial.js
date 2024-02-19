@@ -24,6 +24,13 @@ for (let index = 0; index < seats.length; index++) {
         seatsSelectedCount++;
         seatsSelectedList.push(event.target.innerText);
 
+        if (!(event.target.value === "") && !(passengerName.value === "")) {
+          const nextButton = document.getElementById("next-button");
+          nextButton.classList.remove("bg-gray-300");
+          nextButton.classList.add("bg-green-500");
+          nextButton.disabled = false;
+        }
+
         const seatsLeft = getParsedInnerTextById("seats-left");
         const newSeatsLeft = seatsLeft - 1;
         setInnerTextById("seats-left", newSeatsLeft);
@@ -95,3 +102,38 @@ applyButton.addEventListener("click", function () {
     couponSection.style.display = "none";
   }
 });
+
+// passenger info section
+
+const passengerName = document.getElementById("name");
+passengerName.addEventListener("keyup", enableNextButton1);
+const passengerPhone = document.getElementById("phone");
+passengerPhone.addEventListener("keyup", enableNextButton2);
+
+function enableNextButton1(event) {
+  const passengerPhone = document.getElementById("phone");
+  if (
+    !(event.target.value === "") &&
+    !(passengerPhone.value === "") &&
+    seatsSelectedCount > 0
+  ) {
+    const nextButton = document.getElementById("next-button");
+    nextButton.classList.remove("bg-gray-300");
+    nextButton.classList.add("bg-green-500");
+    nextButton.disabled = false;
+  }
+}
+
+function enableNextButton2(event) {
+  const passengerName = document.getElementById("name");
+  if (
+    !(event.target.value === "") &&
+    !(passengerName.value === "") &&
+    seatsSelectedCount > 0
+  ) {
+    const nextButton = document.getElementById("next-button");
+    nextButton.classList.remove("bg-gray-300");
+    nextButton.classList.add("bg-green-500");
+    nextButton.disabled = false;
+  }
+}

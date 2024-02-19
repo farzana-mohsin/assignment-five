@@ -54,9 +54,7 @@
           </button>
         </div>
       </section>
-      <div
-        class="flex mx-auto gap-5 max-w-4xl absolute translate-x-96 -translate-y-32"
-      >
+      <div class="child flex mx-auto gap-5 max-w-4xl">
         <img
           class="object-scale-down h-40 w-80"
           src="images/banner-1.png"
@@ -423,7 +421,7 @@
               </div>
             </div>
 
-            <form method="get" class="form-example mt-7">
+            <form class="mt-7">
               <label for="name" class="my-4 font-semibold"
                 >Passenger name *</label
               ><br />
@@ -435,8 +433,8 @@
                 required
                 placeholder="Enter your name"
               /><br />
-              <label for="phone" class="my-4 font-semibold"
-                >Phone Number *</label
+              <label for="phone" class="my-4 font-semibold">
+                Phone Number * </label
               ><br />
               <input
                 class="border-2 border-gray-100 px-8 py-4 w-full rounded-2xl my-3"
@@ -456,11 +454,16 @@
                 name="email"
                 placeholder="Enter your email id"
               /><br />
-              <div
-                class="form-example bg-green-500 text-white text-center px-8 py-4 rounded-2xl text-xl font-extrabold my-3"
+
+              <button
+                class="w-full bg-gray-300 text-white text-center px-8 py-4 rounded-2xl text-xl font-extrabold my-3"
+                id="next-button"
+                type="button"
+                onclick="my_modal_1.showModal()"
               >
-                <button onclick="my_modal_1.showModal()">Next</button>
-              </div>
+                Next
+              </button>
+
               <div class="flex justify-between underline text-black opacity-50">
                 <a href="">Terms and Conditions</a>
                 <a href="">Cancellation Policy</a>
