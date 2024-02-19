@@ -87,19 +87,22 @@ applyButton.addEventListener("click", function () {
   const totalPrice = getParsedInnerTextById("total-price");
   const grandTotalPrice = getParsedInnerTextById("grand-total");
   const couponSection = document.getElementById("coupon-section");
-  if (couponCode === "NEW15") {
+  const couponSuccess = document.getElementById("coupon-success");
+  if (couponCode === "NEW15" && seatsSelectedCount > 0) {
     const discountAmount = totalPrice * 0.15;
     console.log(discountAmount);
     const newGrandTotalPrice = grandTotalPrice - discountAmount;
     setInnerTextById("grand-total", newGrandTotalPrice);
 
     couponSection.style.display = "none";
-  } else if (couponCode === "Couple 20") {
+    couponSuccess.classList.remove("hidden");
+  } else if (couponCode === "Couple 20" && seatsSelectedCount > 0) {
     const discountAmount = totalPrice * 0.2;
     const newGrandTotalPrice = grandTotalPrice - discountAmount;
     setInnerTextById("grand-total", newGrandTotalPrice);
 
     couponSection.style.display = "none";
+    couponSuccess.classList.remove("hidden");
   }
 });
 
