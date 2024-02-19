@@ -14,6 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="font-raleway">
+    <!-- nav section -->
     <nav class="container mx-auto max-w-6xl mt-9 pt-20 mb-0">
       <div class="flex justify-between items-center">
         <h2 class="text-4xl font-bold">Gr-Ticket</h2>
@@ -31,8 +32,8 @@
         </div>
       </div>
     </nav>
+    <!-- banner section -->
     <header class="relative">
-      <!-- background section -->
       <section
         class="container mx-auto my-14 py-28 bg-[url(images/banner.png)] flex max-h-screen items-center justify-center bg-no-repeat bg-center object-cover"
       >
@@ -424,7 +425,7 @@
               </div>
               <div
                 role="alert"
-                class="hidden alert alert-success mx-auto bg-green-500"
+                class="hidden alert alert-success mx-auto bg-green-500 text-white"
                 id="coupon-success"
               >
                 <svg
@@ -500,6 +501,7 @@
           </div>
         </section>
       </section>
+      <!-- modal section -->
       <section class="modal">
         <dialog id="my_modal_1" class="modal">
           <div
@@ -518,6 +520,7 @@
               <form method="dialog">
                 <!-- if there is a button in form, it will close the modal -->
                 <button
+                  id="continue-button"
                   class="btn bg-green-500 text-white px-14 border-none rounded-3xl font-semibold text-xl my-5"
                 >
                   Continue
@@ -530,6 +533,5 @@
     </main>
     <script src="js/utility.js"></script>
     <script src="js/trial.js"></script>
-    <!-- <script src="js/assignment-five.js"></script> -->
   </body>
 </html>

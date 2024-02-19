@@ -140,3 +140,8 @@ function enableNextButton2(event) {
     nextButton.disabled = false;
   }
 }
+const continueModal = document.getElementById("continue-button");
+continueModal.addEventListener("click", reloadFunction);
+function reloadFunction(event) {
+  window.location.reload();
+}
