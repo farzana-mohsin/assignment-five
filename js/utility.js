@@ -11,3 +11,7 @@ function setInnerTextById(elementId, value) {
 function setBackgroundColorByElement(element, color) {
   element.classList.add(color);
 }
+
+// passenger info section
+
+const passengerName = document.getElementById();

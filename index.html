@@ -472,7 +472,7 @@
               <div
                 class="form-example bg-green-500 text-white text-center px-8 py-4 rounded-2xl text-xl font-extrabold my-3"
               >
-                <button>Next</button>
+                <button onclick="my_modal_1.showModal()">Next</button>
               </div>
               <div class="flex justify-between underline text-black opacity-50">
                 <a href="">Terms and Conditions</a>
@@ -481,6 +481,33 @@
             </form>
           </div>
         </section>
+      </section>
+      <section class="modal">
+        <dialog id="my_modal_1" class="modal">
+          <div
+            class="modal-box flex flex-col justify-center items-center text-center space-y-5"
+          >
+            <img class="my-5" src="images/success.png" alt="" />
+            <h3 class="font-bold text-2xl text-green-500 uppercase">SUCCESS</h3>
+            <p class="font-bold mt-4 pt-5 text-lg">
+              Thank you for Booking with P Paribahan. We are looking forward to
+              serve you!
+            </p>
+            <p class="text-gray-600 mb-4 pb-3 text-lg">
+              You will get a confirmation email shortly.
+            </p>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button
+                  class="btn bg-green-500 text-white px-14 border-none rounded-3xl font-semibold text-xl my-5"
+                >
+                  Continue
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
     </main>
     <script src="js/utility.js"></script>
