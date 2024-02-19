@@ -14,61 +14,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="font-raleway">
-    <nav>
-      <div class="navbar bg-base-100">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
-          </div>
-          <a class="btn btn-ghost text-xl">P-Ticket</a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
-            <li><a>About</a></li>
-            <li><a>Destination</a></li>
-            <li><a>Search</a></li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <a class="btn">Bus + Bus Image</a>
+    <nav class="container mx-auto max-w-6xl mt-9 pt-20 mb-0">
+      <div class="flex justify-between items-center">
+        <h2 class="text-4xl font-bold">P-Ticket</h2>
+        <ul class="flex justify-center space-x-10 text-lg">
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Destination</a></li>
+          <li><a href="">Search</a></li>
+        </ul>
+        <div
+          class="flex space-x-2 bg-green-100 border-none text-green-600 px-8 py-4 font-bold rounded-xl text-xl"
+        >
+          <button>Bus</button>
+          <img src="images/bus-icon.png" alt="" />
         </div>
       </div>
     </nav>
     <header>
       <!-- background section -->
       <section
-        class="container mx-auto bg-[url(images/banner.png)] flex min-h-screen items-center justify-center bg-no-repeat bg-center object-cover h-14 bg-bg-gradient-to-b from-[#ff071280] to-[#ff071217]"
+        class="container mx-auto my-14 py-28 bg-[url(images/banner.png)] flex max-h-screen items-center justify-center bg-no-repeat bg-center object-cover"
       >
+        <!-- bg-bg-gradient-to-b from-[#ff071280] to-[#ff071217] -->
         <div class="flex flex-col items-center gap-6 pb-12 pt-0 text-center">
           <h1 class="text-6xl text-white font-extrabold">
             End to End Travel with
@@ -90,7 +58,7 @@
     <main>
       <!-- Best offers section -->
       <section
-        class="container mx-auto flex flex-col gap-11 items-center justify-center mb-10 mt-0"
+        class="container mx-auto flex flex-col gap-11 items-center justify-center my-14 py-20"
       >
         <h2 class="text-4xl font-semibold">Best offers for you</h2>
         <div
@@ -125,7 +93,7 @@
               alt=""
             />
             <button
-              class="bg-green-100 border-none text-green-600 border-2 border-green-500 p-4 font-bold rounded-xl absolute translate-x-44 -translate-y-36 flex space-x-2 gap-2 items-center font-inter"
+              class="bg-green-100 border-none text-green-600 border-2 p-4 font-bold rounded-xl absolute translate-x-44 -translate-y-36 flex space-x-2 gap-2 items-center font-inter"
             >
               <img src="images/seat-green.png" alt="" />
               <span id="seats-left">40</span>Seats Left
