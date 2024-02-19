@@ -19,7 +19,7 @@ for (let index = 0; index < seats.length; index++) {
   seat.addEventListener("click", function (event) {
     if (!seatsSelectedList.includes(event.target.innerText)) {
       if (seatsSelectedCount >= 4) {
-        alert("you cannot select more than four seats");
+        alert("Sorry, you cannot select more than four seats");
       } else {
         seatsSelectedCount++;
         seatsSelectedList.push(event.target.innerText);
